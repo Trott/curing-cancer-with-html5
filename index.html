@@ -159,8 +159,50 @@ documents that are on the site. And we're adding new documents all the time as t
 The site was launched in 2002. Unfortunately, while the content is amazing and hugely 
 valuable, the site itself had not kept up with the times.
 
-*Describe what it contains, who uses it, the technology behind it, limitations of
-that tech, and the new improved interface.*
+---
+
+class: center, middle
+
+# Lucene 2
+
+SRSLY? Not Solr?
+
+???
+
+Let's start with the backend. The documents are indexed using Lucene 2. The current version is 4.9.0.
+
+---
+
+class: center, middle
+
+# No incremental indexing.
+
+Add one document? Gotta reindex 'em all.
+
+???
+
+We do not have incremental indexing. So if we need to change one piece of metadata on one document,
+all of the 70 million pages of 14 million documents need to be reindexed.
+
+---
+
+class: center, middle
+
+# Monolithic Tomcat app
+
+Want to change a CSS property? Hope you know Java!
+
+???
+
+Everything is packaged into a WAR file. Frontend. Middleware. Backend. Yup.
+
+---
+
+class: center, middle
+
+Screenshot goes here to talk about user-facing/frontend issues.
+
+???
 
 What's wrong in my opinion, not just my opinion but user research showed, here's what our awesome UX designer is trying to do to fix the problem.
 
@@ -170,10 +212,6 @@ https://wiki.library.ucsf.edu/display/ckm/Design+Docs
 
 Check out the left sidebar on the scoped search pdf in that last link. Hot. Use it.
 
-* Lucene 2, not even SOLR
-* Tomcat WAR for everything. Monolithic!
-* No incremental indexing
-* Metadata in MySQL w/ index build off that; considering using SOLR as data store b/c document-based
 ---
 
 class: center, middle
