@@ -171,6 +171,9 @@ SRSLY? Not Solr?
 
 Let's start with the backend. The documents are indexed using Lucene 2. The current version is 4.9.0.
 
+As you might imagine, this means we're missing out on a lot of baked-in features for searching that
+users have come to expect.
+
 ---
 
 class: center, middle
@@ -181,8 +184,9 @@ Add one document? Gotta reindex 'em all.
 
 ???
 
-We do not have incremental indexing. So if we need to change one piece of metadata on one document,
-all of the 70 million pages of 14 million documents need to be reindexed.
+We do not have incremental indexing. 
+
+So if we need to change one piece of metadata on one document, all of the 70 million pages of 14 million documents need to be reindexed.
 
 ---
 
@@ -194,7 +198,11 @@ Want to change a CSS property? Hope you know Java!
 
 ???
 
-Everything is packaged into a WAR file. Frontend. Middleware. Backend. Yup.
+Everything is packaged into a WAR file. Middleware and backend, sure. But the frontend too. All in one
+big ol' WAR file.
+
+So if you want to change the CSS so some text that is currently beige is a slightly darker tan instead, 
+you have to package up a new WAR file.
 
 ---
 
