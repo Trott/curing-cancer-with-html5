@@ -401,16 +401,51 @@ amalgamatic! Try it! No enterprise Java skillz or license necessary. Browserify 
 
 class: center, middle
 
+# So, about federated search...
 
-There are (at least) three ways to pull data out of other resources in real time.
-<ol>
-  <li><p><b>Cool, they have an API for that!</b>
-<i>This almost never happens.</i></p></li>
-  <li><p><b>I will screen-scrape the #*%!?@ out of your website!</b>
-<i>This is by far the most common scenario.</i></p></li>
-  <li><p><b>Web New-dot-Oh: It's full of JavaScript that injects the content.</b>
-<i>An edge case, but one that is becoming more important all the time. Make friends with <a href="http://phantomjs.org/">PhantomJS</a> to scrape these sites.</i></p></li>
-</ol>
+???
+
+There are (at least) three ways to pull data out of other resources in real time. In descending order of desirability, here they are.
+
+---
+
+class: center, middle
+
+# Cool, they have an API for that!
+
+This almost never happens.
+
+???
+
+Number 1: The content provider might publish an API. But usually not. Or if they do, it's a clunky API designed to create HTML widgets and not deliver JSON data or anything like that. In other words, it's an API meant to serve the publisher and not the consumer.
+
+Still accessing the content provider's API is the most desirable option, of course.
+
+---
+
+class: center, middle 
+
+# Screen-scrape the #*%!? out of it.
+
+This is by far the most common scenario.
+
+???
+
+Then there's straightforward grab-the-HTML and scrape the information out of it. Of course, it's brittle because the HTML can change and break your scraper. But it has two big upsides: It usually works well enough, and it is usually easy and fast to implement.
+
+---
+
+class: center, middle 
+
+# Web New-dot-Oh
+
+It's full of JavaScript that injects the content.
+
+???
+
+Then there's your site powered by Angular or Backbone or Ember or whatever. None of the content shows up unless you execute a bunch of JavaScript. Make friends with headless browsers like PhantomJS to scrape these sites.
+
+This should be your last resort, not your first choice. Headless browsers are fast compared to Safari and Internet Explorer, but they're slow compared to curl or API calls.
 
 ---
 
