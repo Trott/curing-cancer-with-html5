@@ -77,10 +77,6 @@ Speaking of problematic advertising, let's go back to 1951.
 
 <blockquote><p>What cigarette do you smoke, doctor?</p><p>Tens of thousands of doctors in all branches of medicine in all parts of the country were asked that question! What cigarette do you smoke, doctor? </p><p>The brand named most was Camel! </p><p>Yes, surveys show more doctors smoke Camels than any other cigarette. </p><p> Smoke Camels, the cigarette so many doctors enjoy!</blockquote>
 
-(Plan b: https://www.youtube.com/watch?v=hxUZI0vE0FM)
-
-(Plan c: http://legacy.library.ucsf.edu/tid/xrw93b00/pdf)
-
 If you only take one thing from this talk, it should be that if you want to be healthy, smoke Camel cigarettes!
 
 Let's fast foward now to 1983...
@@ -364,40 +360,28 @@ And I'm not even close to done...
 
 class: center, middle
 
-![Motivated user scenario](img/scenario.png)
+# We have lots of search interfaces...
 
 ???
 
-Here's a scenario for a motivated user. 
-
-Scenarios help us clarify our thinking and uncover issues we've missed.
-
-Here, we see the issues getting to a reasonable number of relevant results. This story highlighted a key pain point with our initial proposed flow: expanding the search beyond the initial scope is impossible&emdash;you have to start your search over again.  
+We're an academic library. We have tons of resources, but users can't be expecte to search in 14 different interfaces to find what they're looking for. So academic libraries typically offer what's called federated serach.
 
 ---
 
 class: center, middle
 
-# Things I wish we had done&hellip;
 
-&hellip;TDD, mobile-first, decoupling from middleware&hellip;
-
----
-
-class: center, middle
-
-# D3? stuff like that? Yeah? No?
+# And our federated search kinda sucks...
 
 ???
 
-Actually, list the tech we're using, eh? JS libs/frameworks, Less, etc. Of course,
-then you have to be prepared to justify these choices. *sad trombones*
+Our federated search suffers from many of the same problems described for the tobacco documents library.
 
 ---
 
 class: center, middle
 
-# Anything about Library search?
+# ...so we made it suck less.
 
 ???
 
@@ -407,25 +391,13 @@ It's now an API so anyone can make a new interface that's better than ours or mo
 
 Tech stack change (Drupal -> Foundation + Node)
 
-Links go directly to results, hopefully
+Links go directly to results, not to our description of the result
 
 Oh, look, you can open a link in a new tab.
 
-There is surprisingly little published research on measuring search success/user satisfaction. Lots of research, just a lot of it is trade secrets.
-
-To record a click-through rate baseline, would need to start logging what results get served but not clicked. Let's try something easier...
-
-Record whether results clicks vs. search clicks. And let's do it in an automated way.
-
-amalgamatic! Try it! No enterprise Java skillz or license necessary. Write plugins! Would love to browserify it and just have a local metasearch, but, you know, cross-origin. Might be useful for a browser extension, though.
+amalgamatic! Try it! No enterprise Java skillz or license necessary. Browserify it even! Useful for a browser extension as well.
 
 ---
-
-Academic libraries offer many resources, but users cannot be expected to search in, say, a half dozen different interfaces to find what they're looking for. So academic libraries typically offer <a href="https://en.wikipedia.org/wiki/Federated_search">federated search</a>.
-
-Sometimes, a solution is purchased. Many libraries, for example, use <a href="http://www.proquest.com/products-services/360-Search.html">360 Search</a>. 
-
-Here at UCSF, we are among the libraries that have built our own federated search. Twice.
 
 There are (at least) three ways to pull data out of other resources in real time.
 <ol>
