@@ -451,18 +451,21 @@ This should be your last resort, not your first choice. Headless browsers are fa
 
 class: center, middle
 
+# Pitfalls
+
+???
 
 When trying to implement these solutions, a common scenario is to build your screen-scraping federated search tool with traditional server-side languages like Java or PHP. 
 
----
-
-class: center, middle
-
-These strategies and technologies bring with them pitfalls to be avoided. Recompiling your WAR every time one of your target systems modifies their HTML layout, anyone?
+These strategies and technologies bring with them pitfalls to be avoided. Recompiling your WAR every time one of your target systems modifies their HTML layout, anyone? Anyone? Who's with me?
 
 ---
 
 class: center, middle
+
+# "My solution only works in Drupal!"
+
+???
 
 Here's another pitfall: Our group built a solution years ago (our first one) that is implemented in Drupal with no external facing API. So, if I want to experiment with a different results interface, I need to write it in Drupal. This tight coupling prevents experimentation with other technologies or things that don't fit neatly into the Drupal paradigm.
 
@@ -470,42 +473,59 @@ Here's another pitfall: Our group built a solution years ago (our first one) tha
 
 class: center, middle
 
-A lot of the pitfalls can be avoided by following sound software architecture principles. But one thing should be uncontroversial:
-
----
-
-class: center, middle
-
-<strong>No programming language has a more robust and widely-understood set of conventions and tools for processing blobs of HTML than JavaScript.</strong>
-
----
-
-class: center, middle
-
-So how about building your federated search server using Node.js? Or maybe even take it a step further and just let your user's browser execute the federated search entirely by itself, no need to talk to your server! If it's all just JavaScript, why not?
-
----
-
-class: center, middle
-
-First, we wrote <a href="https://github.com/ucsf-ckm/amalgamatic">a pluggable, extensible federated search tool called Amalgamatic</a>.
-
----
-
-class: center, middle
-
-Second, we wrote <a href="https://www.npmjs.org/browse/keyword/amalgamatic-plugin">the plugins that we needed</a> to search the resources we were interested in: 
-
-<ul>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-pubmed">PubMed</a></li>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-sfx">SFX</a></li>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-libguides">LibGuides</a></li>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-millennium">Millennium OPAC</a></li>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-drupal6">Drupal 6</a> (to include our own website contents in the search results)</li>
-<li><a href="https://github.com/ucsf-ckm/amalgamatic-ucsflibdbs">our curated list of databases</a></li>
-</ul>
+# JavaScript FTW
 
 ???
+
+A lot of the pitfalls can be avoided by following sound software architecture principles. But one thing should be uncontroversial:
+
+&quot;No programming language has a more robust and widely-understood set of conventions and tools for processing blobs of HTML than JavaScript.&quot;
+
+It's got the DOM built right in. It's got a million battle-tested libraries with simple and powerful jQuery-like selectors. Its sole reason for existing is the Web and HTML!
+
+---
+
+class: center, middle
+
+# Node.js FTW
+
+???
+
+So how about building your federated search server using Node.js? 
+
+---
+
+class: center, middle
+
+# Browserify FTW
+
+???
+
+Or maybe even take it a step further and just let your user's browser execute the federated search entirely by itself, no need to talk to your server! If it's all just JavaScript, why not?
+
+---
+
+class: center, middle
+
+# Amalgamatic
+
+github.com/ucsf-ckm/amalgamatic
+
+???
+
+First, we wrote a pluggable, extensible federated search tool called Amalgamatic.
+
+---
+
+class: center, middle
+
+# Amalgamatic plugins
+
+www.npmjs.org/browse/keyword/amalgamatic-plugin
+
+???
+
+Second, we wrote the plugins that we needed to search the resources we were interested in.
 
 In the course of writing these plugins, we used all three of the techniques described above (API, scraping HTML, and using a headless browser to get JavaScript-generated content).
 
@@ -513,27 +533,41 @@ In the course of writing these plugins, we used all three of the techniques desc
 
 class: center, middle
 
-Third, we used Amalgamatic to <a href="http://developer.ucsf.edu/doc/library/#search">expose federated search on our API server</a>. (<a href="https://github.com/Trott/apis.ucsf.edu/blob/master/routes/library.js">source code</a>)
+# API server
+
+Node.js, Express
+
+???
+
+Third, we used Amalgamatic to expose federated search on our Node.JS-powered API server.
 
 ---
 
 class: center, middle
 
-Fourth, <a href="http://search.library.ucsf.edu/">we set up a prototype search interface to use that API</a>. (<a href="https://github.com/ucsf-ckm/search.library.ucsf.edu">source code</a>)
+# Federated search prototype
+
+search.library.ucsf.edu
 
 ???
 
-EventSource!
+Fourth, we set up a prototype search interface to use that API.
+
+Obligatory HTML5 API shoutout to EventSource! If you don't know it, look it up, it rules. It's one of the unsung majesticly awesome APIs, powerful and simple, and it doesn't get the attention it deserves.
 
 ---
 
 class: center, middle
 
-Lastly, because we could, we used <a href="http://browserify.org/">Browserify</a> to create <a href="https://trott.github.io/demo-amalgamatic-browserify">a demo showing how to use Amalgamatic so that all the retrieval and processing happens in the browser</a>&mdash;no need for an intermediary API or search server! (<a href="https://github.com/Trott/demo-amalgamatic-browserify">source code</a>) 
+# Browserified Demo
+
+trott.github.io/demo-amalgamatic-browserify
 
 ???
 
-While I'm at it with the small-text thing, here's a caveat on the Browserify-ed version: The one thing the browser couldn't do was launch the PhantomJS headless browser for scraping sites that depend on JavaScript execution to display results. Fortunately for us, that was needed in the LibGuides plugin only. And LibGuides offers an API, so if we really wanted LibGuides results, we could use the API. We initially implemented it that way, actually, but found that the API results differed from the LibGuides search page results. We thought that might be confusing to users, so we went with PhantomJS-assisted scraping.
+Lastly, because we could, we used Browserify to create a demo showing how to use Amalgamatic so that all the retrieval and processing happens in the browser</a>&mdash;no need for an intermediary API or search server! 
+
+A small caveat on the Browserify-ed version: One thing the browser couldn't do was launch the headless browser for scraping sites that depend on JavaScript execution to display results. So maybe there's another reason to keep that as a last resort technique only.
 
 ---
 
