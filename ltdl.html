@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Curing Cancer with HTML5</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style type="text/css">
+    @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    body { 
+      font-family: 'Droid Serif';
+    }
+    h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+    img { width: 100%; }
+    .remark-slide-content {
+      color: white;
+      background-color: black;
+    }
+    .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+  </style>
+</head>
+<body>
+  <textarea id="source">
+
+class: center, middle
+
+# Curing Cancer with HTML5
+
+Rich Trott  
+HTML5DevConf  
+October 2014  
+San Francisco  
+
+???
+
+Hi, everyone! 
+
+Thanks for coming! 
+
+This is "Curing Cancer with HTML5"!
+
+---
+
+class: center, middle
+
+# Spoiler alert!
+
+*We're not actually going to cure cancer with HTML5...*
+
+???
+
+Hopefully this is already clear, but HTML5 will not actually cure cancer. 
+
+Neither will I. 
+
+And this talk isn't about oncology; it's about search. 
+
+So why does it have the title "Curing Cancer with HTML5"? 
+
+Because when I wrote up the talk proposal, I was in a rush. 
+
+I work at a medical research institution, some of our researchers are in fact trying to cure cancer,
+boom, there's my title.
+
+Sorry, everyone. I'll try to do better with the title next time.
+
+---
+
+class: center, middle
+
+# OMG
+
+*False advertising!*
+
+???
+
+So yeah, "omg! false advertising!""
+
+---
+
+class: center, middle
+
+# Speaking of questionable advertising....
+
+???
+
+Speaking of problematic advertising, let's go back to 1951.
+
+---
+
+class: center, middle
+
+<video controls=1 width=640 height=480 src="video/doctor.mov"></video>
+
+???
+
+<blockquote><p>What cigarette do you smoke, doctor?</p><p>Tens of thousands of doctors in all branches of medicine in all parts of the country were asked that question! What cigarette do you smoke, doctor? </p><p>The brand named most was Camel! </p><p>Yes, surveys show more doctors smoke Camels than any other cigarette. </p><p> Smoke Camels, the cigarette so many doctors enjoy!</blockquote>
+
+If you only take one thing from this talk, it should be that if you want to be healthy, smoke Camel cigarettes!
+
+Let's fast foward now to 1983...
+
+---
+
+class: center, middle
+
+![Letter from Sylvester Stallone agreeing to smoke in his movies in exchange for $500,000.](img/tmq36b00.jpg)
+
+???
+
+Absolutely shameful. I mean, every person in this room knows that it ought
+to be "no *fewer* than five feature films" and not "no *less* than 5", right? 
+Just shameful.
+
+Fast forward again to 2002. 
+
+---
+
+class: center, middle
+
+# "Shocked and horrified!"
+
+*The Slow Poisoners*
+
+???
+
+I was in a band called, appropirately enough, The Slow Poisoners. We wrote to 
+B&amp;W telling them that we were (and I quote) "shocked and horrified" that 
+they paid Stallone a half million dollars to smoke in movies...because *we* would
+be happy to smoke their products on stage for a tiny fraction of that money.
+
+---
+
+class: center, middle
+
+# "Extremely tempting!"
+
+*Brown &amp; Williamson*
+
+???
+
+One of the B&amp;W lawyers must have had a good sense of humor, because he wrote us
+back to tell us that our offer was (and, again, I quote) "extremely tempting". 
+However, he went on to say, that sort of promotion would put them in violation of something 
+called The Master Settlement. So, they had to turn us down.
+
+---
+
+class: center, middle
+
+# Dude, where's your presentation?
+
+???
+
+What does any of this have to do with the web?
+
+---
+
+class: center, middle
+
+# Tobacco Master Settlement Agreement
+
+Look it up on Wikipedia if you want details.
+
+???
+
+Well, that Master Settlement alluded to by the B&amp;W lawyer had a lot of effects.
+But the one we care about here is this...
+
+---
+
+class: center, middle
+
+
+![Screenshot of http://legacy.library.ucsf.edu](img/legacy_home.png)
+
+???
+
+The Master Settlement ultimately resulted in this site, run by my employer, the
+UC San Francisco Library. It contains millions and millions--literally!--of internal
+corporate documents from the tobacco industry, searchable by anyone! The "Which cigarette do
+you smoke, doctor?" commercial and the letter from Sylvester Stallone are both examples of 
+documents that are on the site. And we're adding new documents all the time as they become available.
+
+The site was launched in 2002. Unfortunately, while the content is amazing and hugely 
+valuable, the site itself has not kept up with the times.
+
+---
+
+class: center, middle
+
+# User-centered redesign
+
+???
+
+So, we engaged in a user-centered redesign. 
+
+Which is a UX term. 
+
+So I'm going to wave my hands and act like I know what it means.
+
+But I'm assured by people more knowledgable than I am that it means what it sounds like it means: Every decision about how the site will work starts from the point of view of the target user’s needs.
+
+---
+
+class: center, middle
+
+# Novice, motivated, and super users
+
+???
+
+So, we had to identify our target users.
+
+Then we had to engage with these target users to identify their actual needs rather than assuming we already understood their needs.
+
+I'll wave my hands some more and say that we identified three target users. And these categories probably won't surprise anyone.
+
+The novice user has little or no experience with the site.
+
+The motivated user has not been trained on how to use the site, but is willing to dig in and be persistent.
+
+The super user has gone through our training and knows how to construct complex search queries.
+
+And one thing is for sure: The current site caters to super users.
+
+---
+
+class: center, middle
+
+![Screenshot of top of http://legacy.library.ucsf.edu/action/search/basic?fd=0&amp;q=curing+cancer](img/legacy_results_top.png)
+
+???
+
+I mean, check out these myriad options and inexplicable metadata categories.
+
+Seriously, just soak that in for a second or two.
+
+Don't miss all those tabs!
+
+And be sure you know whether you want Advanced Search or Expert Search! Because they're not the same thing!
+
+---
+
+class: center, middle
+
+![Screenshot of middle of http://legacy.library.ucsf.edu/action/search/basic?fd=0&amp;q=curing+cancer](img/legacy_results_scroll.png)
+
+???
+
+Check out the metadata.
+
+Date 00000000!
+
+Bates! Thank Heavens they included the Bates! Whatever that is.
+
+---
+
+class: center, middle
+
+![Screenshot of detailed result](img/bates_master.png)
+
+???
+
+As you explore more results, you may notice that some records don't just have a Bates metadata field, but that they also have, as this one does, a...Master...Bates metadata field. 
+
+I don't want to belittle the incredibly hard work that went into building this site, nor do I want to suggest that it hasn't been wildly successful by many metrics. 
+
+However, when you see something like this, you might be forgiven for thinking that a few corners were cut in the whole "thinking everything through" in the user interface department. 
+
+---
+
+class: center, middle
+
+# Hands-off observation, casual interviews, and user testing
+
+???
+
+So we decided to think it through. We started by watching people using the site
+without any guidance as to what we wanted to do with it. We weren't creepy about it.
+We asked them to let us watch them.
+
+We also engaged in casual interviews with users.
+
+Lastly, we performed task-based user testing. "Do this with the site, user! Do it now!"
+
+---
+
+class: center, middle
+
+# Expectations, needs, likes, dislikes
+
+???
+
+We then tried to tease out:
+
+what these users expect from the search experience
+
+what they need to feel successful
+
+what they love about the current site
+
+and what they want changed about the current site
+
+---
+
+class: center, middle
+
+# The Challenge
+
+???
+
+Build an easy-to-use search engine&hellip;
+
+&hellip;that teaches users how to return quality results&hellip;
+
+&hellip;without dumbing down the experience for our super users.
+
+---
+
+class: center, middle
+
+# Make everyone feel like an expert.
+
+???
+
+In other words, we want everyone to feel like an expert.
+
+And we came up with lots of changes and have a beta version of the new site with its awesome BackboneJS-powered interface hitting a SOLR server to load in the results via AJAX. But I'm going to pivot here.
+
+---
+
+class: center, middle
+
+# We have lots of search interfaces&hellip;
+
+???
+
+I mentioned that my employer is the University of California, San Francisco Library. We're an academic library. We have tons of resources, but users can't be expecte to search in 14 different interfaces to find what they're looking for. So academic libraries typically offer what's called federated serach.
+
+---
+
+class: center, middle
+
+
+# &hellip;and our federated search kinda sucks&hellip;
+
+???
+
+Our federated search suffers from many of the same problems described for the tobacco documents library.
+
+---
+
+class: center, middle
+
+# &hellip;so we made it suck less.
+
+???
+
+Before/after screenshot
+
+It's now an API so anyone can make a new interface that's better than ours or more specialized/customized or a mashup
+
+Tech stack change (Drupal -> Foundation + Node)
+
+Links go directly to results, not to our description of the result
+
+Oh, look, you can open a link in a new tab.
+
+amalgamatic! Try it! No enterprise Java skillz or license necessary. Browserify it even! Useful for a browser extension as well.
+
+---
+
+class: center, middle
+
+# So, about federated search...
+
+???
+
+There are (at least) three ways to pull data out of other resources in real time. In descending order of desirability, here they are.
+
+---
+
+class: center, middle
+
+# Cool, they have an API for that!
+
+This almost never happens.
+
+???
+
+Number 1: The content provider might publish an API. But usually not. Or if they do, it's a clunky API designed to create HTML widgets and not deliver JSON data or anything like that. In other words, it's an API meant to serve the publisher and not the consumer.
+
+Still accessing the content provider's API is the most desirable option, of course.
+
+---
+
+class: center, middle 
+
+# Screen-scrape the #*%!? out of it.
+
+This is by far the most common scenario.
+
+???
+
+Then there's straightforward grab-the-HTML and scrape the information out of it. Of course, it's brittle because the HTML can change and break your scraper. But it has two big upsides: It usually works well enough, and it is usually easy and fast to implement.
+
+---
+
+class: center, middle 
+
+# Web New-dot-Oh
+
+It's full of JavaScript that injects the content.
+
+???
+
+Then there's your site powered by Angular or Backbone or Ember or whatever. None of the content shows up unless you execute a bunch of JavaScript. Make friends with headless browsers like PhantomJS to scrape these sites.
+
+This should be your last resort, not your first choice. Headless browsers are fast compared to Safari and Internet Explorer, but they're slow compared to curl or API calls.
+
+---
+
+class: center, middle
+
+# Pitfalls
+
+???
+
+When trying to implement these solutions, a common scenario is to build your screen-scraping federated search tool with traditional server-side languages like Java or PHP. 
+
+These strategies and technologies bring with them pitfalls to be avoided. Recompiling your WAR every time one of your target systems modifies their HTML layout, anyone? Anyone? Who's with me?
+
+---
+
+class: center, middle
+
+# "My solution only works in Drupal!"
+
+???
+
+Here's another pitfall: Our group built a solution years ago (our first one) that is implemented in Drupal with no external facing API. So, if I want to experiment with a different results interface, I need to write it in Drupal. This tight coupling prevents experimentation with other technologies or things that don't fit neatly into the Drupal paradigm.
+
+---
+
+class: center, middle
+
+# JavaScript FTW
+
+???
+
+A lot of the pitfalls can be avoided by following sound software architecture principles. But one thing should be uncontroversial:
+
+&quot;No programming language has a more robust and widely-understood set of conventions and tools for processing blobs of HTML than JavaScript.&quot;
+
+It's got the DOM built right in. It's got a million battle-tested libraries with simple and powerful jQuery-like selectors. Its sole reason for existing is the Web and HTML!
+
+---
+
+class: center, middle
+
+# Node.js FTW
+
+???
+
+So how about building your federated search server using Node.js? 
+
+---
+
+class: center, middle
+
+# Browserify FTW
+
+???
+
+Or maybe even take it a step further and just let your user's browser execute the federated search entirely by itself, no need to talk to your server! If it's all just JavaScript, why not?
+
+---
+
+class: center, middle
+
+# Amalgamatic
+
+github.com/ucsf-ckm/amalgamatic
+
+???
+
+First, we wrote a pluggable, extensible federated search tool called Amalgamatic.
+
+---
+
+class: center, middle
+
+# Amalgamatic plugins
+
+www.npmjs.org/browse/keyword/amalgamatic-plugin
+
+???
+
+Second, we wrote the plugins that we needed to search the resources we were interested in.
+
+In the course of writing these plugins, we used all three of the techniques described above (API, scraping HTML, and using a headless browser to get JavaScript-generated content).
+
+---
+
+class: center, middle
+
+# API server
+
+Node.js, Express
+
+???
+
+Third, we used Amalgamatic to expose federated search on our Node.JS-powered API server.
+
+---
+
+class: center, middle
+
+# Federated search prototype
+
+search.library.ucsf.edu
+
+???
+
+Fourth, we set up a prototype search interface to use that API.
+
+Obligatory HTML5 API shoutout to EventSource! If you don't know it, look it up, it rules. It's one of the unsung majesticly awesome APIs, powerful and simple, and it doesn't get the attention it deserves.
+
+---
+
+class: center, middle
+
+# Browserified Demo
+
+trott.github.io/demo-amalgamatic-browserify
+
+???
+
+Lastly, because we could, we used Browserify to create a demo showing how to use Amalgamatic so that all the retrieval and processing happens in the browser</a>&mdash;no need for an intermediary API or search server! 
+
+A small caveat on the Browserify-ed version: One thing the browser couldn't do was launch the headless browser for scraping sites that depend on JavaScript execution to display results. So maybe there's another reason to keep that as a last resort technique only.
+
+---
+
+class: center, middle
+
+# github.com/ucsf-ckm/amalgamatic
+
+# Thanks!!
+
+
+Rich Trott  
+@trott  
+UC San Francisco  
+Library
+
+  </textarea>
+  <script src="js/remark.min.js">
+  </script>
+  <script type="text/javascript">
+  var slideshow = remark.create();
+  </script>
+</body>
+</html>
