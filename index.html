@@ -213,7 +213,7 @@ class: center, middle
 
 When trying to implement these solutions, a common scenario is to build your screen-scraping federated search tool with traditional server-side languages like Java or PHP. 
 
-These strategies and technologies bring with them pitfalls to be avoided. Recompiling your WAR every time one of your target systems modifies their HTML layout, anyone? Anyone? Who's with me?
+These strategies and technologies bring with them pitfalls to be avoided. 
 
 ---
 
@@ -223,7 +223,15 @@ class: center, middle
 
 ???
 
-Here's another pitfall: Our group built a solution years ago (our first one) that is implemented in Drupal with no external facing API. So, if I want to experiment with a different results interface, I need to write it in Drupal. This tight coupling prevents experimentation with other technologies or things that don't fit neatly into the Drupal paradigm.
+Here's one!
+
+Our group built a solution years ago that is implemented in Drupal with no external facing API. 
+
+So, if I want to experiment with a different results interface without rewriting the entire scraping engine, I need to write it in Drupal.
+
+This tight coupling prevents experimentation with other technologies or things that don't fit neatly into the Drupal paradigm.
+
+And that sucks.
 
 ---
 
@@ -233,11 +241,17 @@ class: center, middle
 
 ???
 
-A lot of the pitfalls can be avoided by following sound software architecture principles. But one thing should be uncontroversial:
+A lot of the pitfalls can be avoided by following sound software architecture principles. 
 
-&quot;No programming language has a more robust and widely-understood set of conventions and tools for processing blobs of HTML than JavaScript.&quot;
+But one thing should be uncontroversial:
 
-It's got the DOM built right in. It's got a million battle-tested libraries with simple and powerful jQuery-like selectors. Its sole reason for existing is the Web and HTML!
+**&quot;No programming language has a more robust and widely-understood set of conventions and tools for processing blobs of HTML than JavaScript.&quot;**
+
+It's got DOM-handling built right in!
+
+It's got a million battle-tested libraries with simple and powerful jQuery-like selectors!
+
+Its sole reason for existing is the web and HTML!
 
 ---
 
