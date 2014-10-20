@@ -454,22 +454,25 @@ But for other APIs, and for screen scraping, you'll need some CORS headers added
 
 ---
 
+class: middle
+
 ````javascript
 var options = {
   searchTerm: searchTerm, // We snarfed this from the form earlier
+  
   pluginCallback: function (err, result) {
     var elem = document.getElementById(result.name);
-
     if (err) {
       elem.textContent = err.message;
     } else {
       if (result.data.length) {
         // Code that inserts results into the DOM
       } else {
-        elem.innerHTML = '<i>No results. :-(</i>';
+        elem.innerHTML = 'No results. :-(';
       }
     }
   }
+
 };
 
 amalgamatic.search(options);
@@ -489,29 +492,49 @@ The global callback, in contrast, runs when all the results return.
 Using the plugin callback allows us to show results as they arrive rather than making the user wait for the slowest plugin to return before showing anything.
 ---
 
-class: center, middle
+class: middle
 
-ANOTHER IMAGE?
+`# browserify -o bundle.js main.js`
 
 ???
 
-It's now an API so anyone can make a new interface that's better than ours or more specialized/customized or a mashup
+Next, we take that JavaScript, which is in `main.js`, and we bundle it up with Browserify into `bundle.js`.
 
-Tech stack change (Drupal -> Foundation + Node)
+---
 
-Links go directly to results, not to our description of the result
+class: middle
 
-Oh, look, you can open a link in a new tab.
+````html
+<script src="bundle.js"></script>
+````
 
-amalgamatic! Try it! No enterprise Java skillz or license necessary. Browserify it even! Useful for a browser extension as well.
+???
+
+Finally, we include the bundle in our HTML file.
 
 ---
 
 class: center, middle
 
-# github.com/ucsf-ckm/amalgamatic
+### trott.github.io/demo-amalgamatic-browserify
 
-# Thanks!!
+???
+
+You can try the demo for yourself, WiFi permitting.
+
+Now, I've been using amalgamatic for search, but I want to encourage people to think creatively about this.
+
+It can really be used to scrape anything.
+
+So you can basically take something that doesn't have an API, and create your own API.
+
+---
+
+class: center, middle
+
+##github.com/ucsf-ckm/amalgamatic
+
+Thanks!!
 
 
 Rich Trott  
