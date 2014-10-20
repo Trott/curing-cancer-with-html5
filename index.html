@@ -153,9 +153,15 @@ This almost never happens.
 
 ???
 
-Number 1: The content provider might publish an API. But usually not. Or if they do, it's a clunky API designed to create HTML widgets and not deliver JSON data or anything like that. In other words, it's an API meant to serve the publisher and not the consumer.
+Number 1: The content provider might publish an API. 
 
-Still accessing the content provider's API is the most desirable option, of course.
+API is all the hotness now, but still, *this almost never happens*. 
+
+Often what you and I consider an API is not what the content providers consider an API. 
+
+If you give me a script tag that injects a widget into my page, and then you call it an API, *that is not an API*.
+
+But if it turns out an API is available, accessing the content provider's API is the most desirable option.
 
 ---
 
@@ -167,7 +173,15 @@ This is by far the most common scenario.
 
 ???
 
-Then there's straightforward grab-the-HTML and scrape the information out of it. Of course, it's brittle because the HTML can change and break your scraper. But it has two big upsides: It usually works well enough, and it is usually easy and fast to implement.
+Then there's straightforward grab-the-HTML and scrape the information out of it.
+
+As we all know, it's brittle because the HTML can change and break your scraper. 
+
+But it has two big upsides!
+
+Number 1: It usually works well enough.
+
+And number 2: It is usually easy and fast to implement.
 
 ---
 
@@ -179,9 +193,15 @@ It's full of JavaScript that injects the content.
 
 ???
 
-Then there's your site powered by Angular or Backbone or Ember or whatever. None of the content shows up unless you execute a bunch of JavaScript. Make friends with headless browsers like PhantomJS to scrape these sites.
+Lastly, there's what you have to do when confronted with a site powered by front-end technologies.
 
-This should be your last resort, not your first choice. Headless browsers are fast compared to Safari and Internet Explorer, but they're slow compared to curl or API calls.
+None of the content shows up unless you execute a bunch of JavaScript.
+
+For this, make friends with headless browsers like PhantomJS to scrape these sites.
+
+This should be your last resort, not your first choice. 
+
+Headless browsers are fast compared to Safari and Internet Explorer, but they're slow compared to curl or API calls.
 
 ---
 
