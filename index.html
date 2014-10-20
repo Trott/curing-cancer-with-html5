@@ -289,8 +289,66 @@ github.com/ucsf-ckm/amalgamatic
 
 First, we wrote a pluggable, extensible federated search tool called Amalgamatic.
 
+Now, remember, this can be used on the server&mdash;a Node.js server&mdash;or in the browser.
+
 ---
 
+class: middle
+
+````
+# npm install --save amalgamatic amalgamatic-sfx amalgamatic-pubmed
+````
+
+???
+
+Either way, you install it with `npm`. 
+
+Here, I'm installing both amalgamatic and a pair of plugins.
+
+We'll get to those in a minute.
+
+---
+
+class: middle
+
+````
+// Load Amalgamatic
+var amalgamatic = require('amalgamatic');
+
+// Load some plugins to search SFX and PubMed.
+var sfx = require('amalgamatic-sfx');
+var pubmed = require('amalgamatic-pubmed');
+
+// Add the plugins to Amalgamatic.
+amalgamatic.add('sfx', sfx);
+amalgamatic.add('pubmed', pubmed);
+
+var callback = function (err, results) {
+  if (err) {
+    console.dir(err);
+  } else {
+    results.forEach( function (result) {
+      console.log('\nCollection name: ' + result.name);
+      console.dir(result.data);
+    });
+  }
+};
+
+// Do a search!
+amalgamatic.search({searchTerm: 'medicine'}, callback);
+````
+
+???
+
+Now we use `require` to load amalgamatic and the plugins. 
+
+We add the plugins to amalgamatic.
+
+We define a callback to work on the results set.
+
+And now we search!
+
+---
 class: center, middle
 
 # Amalgamatic plugins
@@ -299,7 +357,9 @@ www.npmjs.org/browse/keyword/amalgamatic-plugin
 
 ???
 
-Second, we wrote the plugins that we needed to search the resources we were interested in.
+Now about those plugins.
+
+We wrote the ones that we needed to search the resources we were interested in.
 
 In the course of writing these plugins, we used all three of the techniques described above (API, scraping HTML, and using a headless browser to get JavaScript-generated content).
 
