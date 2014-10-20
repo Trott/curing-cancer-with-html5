@@ -149,7 +149,7 @@ class: center, middle
 
 # Cool, they have an API for that!
 
-This almost never happens.
+<span class="blink">This almost never happens.</span>
 
 ???
 
@@ -167,7 +167,7 @@ But if it turns out an API is available, accessing the content provider's API is
 
 class: center, middle 
 
-# Screen-scrape the #*%!? out of it.
+# Screen-scrape the #*%! out of it.
 
 This is by far the most common scenario.
 
@@ -283,7 +283,7 @@ class: center, middle
 
 # Amalgamatic
 
-github.com/ucsf-ckm/amalgamatic
+## github.com/ucsf-ckm/amalgamatic
 
 ???
 
@@ -353,7 +353,7 @@ class: center, middle
 
 # Amalgamatic plugins
 
-www.npmjs.org/browse/keyword/amalgamatic-plugin
+#### www.npmjs.org/browse/keyword/amalgamatic-plugin
 
 ???
 
@@ -375,7 +375,7 @@ class: center, middle
 
 Node.js, Express
 
-github.com/Trott/apis.ucsf.edu
+## github.com/Trott/apis.ucsf.edu
 
 ???
 
@@ -387,7 +387,7 @@ class: center, middle
 
 # Federated search prototype
 
-search.library.ucsf.edu
+## search.library.ucsf.edu
 
 ???
 
@@ -405,7 +405,7 @@ class: center, middle
 
 # Browserified Demo
 
-trott.github.io/demo-amalgamatic-browserify
+### trott.github.io/demo-amalgamatic-browserify
 
 ???
 
@@ -545,6 +545,12 @@ UC San Francisco
   </script>
   <script type="text/javascript">
   var slideshow = remark.create();
+  </script>
+  <script>
+  var blinks = document.querySelectorAll('.blink');
+  blinks.forEach(function (blink) {
+    setInterval(function() { blink.style.visibility = blink.style.visibility ? '' : 'hidden';}, 750);
+  });
   </script>
 </body>
 </html>
