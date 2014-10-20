@@ -311,7 +311,7 @@ We'll get to those in a minute.
 
 class: middle
 
-````
+````javascript
 // Load Amalgamatic
 var amalgamatic = require('amalgamatic');
 
@@ -361,7 +361,11 @@ Now about those plugins.
 
 We wrote the ones that we needed to search the resources we were interested in.
 
-In the course of writing these plugins, we used all three of the techniques described above (API, scraping HTML, and using a headless browser to get JavaScript-generated content).
+In the course of writing these plugins, we used all three of the techniques described earlier:
+
+API, scraping HTML, and using a headless browser to get JavaScript-generated content.
+
+All the plugins are published via npm and tagged `amalgamatic-plugin` so you can find them at the URL or using `npm search`.
 
 ---
 
@@ -370,6 +374,8 @@ class: center, middle
 # API server
 
 Node.js, Express
+
+github.com/Trott/apis.ucsf.edu
 
 ???
 
@@ -387,7 +393,11 @@ search.library.ucsf.edu
 
 Fourth, we set up a prototype search interface to use that API.
 
-Obligatory HTML5 API shoutout to EventSource! If you don't know it, look it up, it rules. It's one of the unsung majesticly awesome APIs, powerful and simple, and it doesn't get the attention it deserves.
+Obligatory HTML5 API shoutout to EventSource! 
+
+If you don't know it, look it up, it rules. 
+
+It's one of the unsung majesticly awesome APIs, powerful and simple, and it doesn't get the attention it deserves.
 
 ---
 
@@ -401,7 +411,9 @@ trott.github.io/demo-amalgamatic-browserify
 
 Lastly, because we could, we used Browserify to create a demo showing how to use Amalgamatic so that all the retrieval and processing happens in the browser</a>&mdash;no need for an intermediary API or search server! 
 
-A small caveat on the Browserify-ed version: One thing the browser couldn't do was launch the headless browser for scraping sites that depend on JavaScript execution to display results. So maybe there's another reason to keep that as a last resort technique only.
+A small caveat on the Browserify-ed version: One thing the browser couldn't do was launch the headless browser for scraping sites that depend on JavaScript execution to display results. 
+
+So maybe there's another reason to keep that as a last resort technique only.
 
 ---
 
