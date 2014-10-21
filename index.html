@@ -20,8 +20,13 @@
       color: white;
       background-color: black;
     }
+    a {
+      color: white;
+    }
     .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
   </style>
+
+  <base target="_blank" />
 </head>
 <body>
   <textarea id="source">
@@ -387,7 +392,7 @@ class: center, middle
 
 # Federated search prototype
 
-## search.library.ucsf.edu
+## http://search.library.ucsf.edu/
 
 ???
 
@@ -405,7 +410,7 @@ class: center, middle
 
 # Browserified Demo
 
-### trott.github.io/demo-amalgamatic-browserify
+### http://trott.github.io/demo-amalgamatic-browserify/
 
 ???
 
@@ -516,11 +521,9 @@ Finally, we include the bundle in our HTML file.
 
 class: center, middle
 
-### trott.github.io/demo-amalgamatic-browserify
+<img src="img/calendar.png" alt="">
 
 ???
-
-You can try the demo for yourself, WiFi permitting.
 
 Now, I've been using amalgamatic for search, but I want to encourage people to think creatively about this.
 
@@ -528,13 +531,75 @@ It can really be used to scrape anything.
 
 So you can basically take something that doesn't have an API, and create your own API.
 
+Like...maybe...this thing.
+
+The much-maligned HTML5DevConf online schedule.
+
+I don't begrudge the conference about this. 
+
+This is a super-affordable conference powered by volunteers and a shoestring budget.
+
+Yesterday, I thought, "If all the people complaining about the schedule would channel that effort towards fixing it, we'd be all set."
+
 ---
 
 class: center, middle
 
-##github.com/ucsf-ckm/amalgamatic
+### https://github.com/ucsf-ckm/amalgamatic-h5dcsched
 
-###Thanks!!
+???
+
+So I wrote an Amalgamatic plugin for the HTML5DevConf calendar.
+
+And gave it a horrible name.
+
+But the code is straightforward HTML scraping.
+
+---
+
+class: center, middle
+
+### https://github.com/Trott/devconf-calendar
+
+???
+
+Then I wrote a quick browserified page to use the plugin to dump JSON calendar data onto a page.
+
+---
+
+class: center, middle
+
+### http://trott.github.io/devconf-calendar
+
+???
+
+And we can see it here, and hope it works, WiFi-willing.
+
+---
+
+class: center, middle
+
+# Step 3: Profit!
+
+<img src="img/twitter.png" alt="" />
+
+???
+
+Then I tweeted about it and waited for someone to use the data to make a killer calendar interface.
+
+It didn't happen.
+
+To be fair, I tweeted about it just before midnight yesterday, so not a lot of time and diminishing benefits for someone to do the work. 
+
+But you know, maybe next year I'll think of doing this a day ahead of the conference rather than halfway into it.
+
+---
+
+class: center, middle
+
+# Thanks!!
+
+## https://trott.github.io/curing-cancer-with-html5
 
 Rich Trott  
 @trott  
